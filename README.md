@@ -1,9 +1,9 @@
 ### Rundown of the Algorithm
 
-This encryption algorithm is a **symmetric block cipher** with basic cryptographic operations designed for educational purposes. It uses a sequence of transformations (substitution, bit shifting, and XOR) applied over multiple rounds (10 rounds) to achieve security characteristics like **confusion** and **diffusion**. Here's a breakdown:
+This encryption algorithm is a **symmetric block cipher** with basic cryptographic operations. It uses a sequence of transformations (substitution, bit shifting, and XOR) applied over multiple rounds (10 rounds) to achieve security with  **confusion** and **diffusion**.
 
 ### **Steps in Each Round**:
-   The algorithm works on blocks of text (character by character). It performs three operations in each of the 10 rounds during encryption and then reverses them during decryption.
+   The algorithm works on blocks of text (character by character). It performs four operations in each of the 10 rounds during encryption and then reverses them during decryption.
 
 #### **Encryption**:
 1. **Substitution**:

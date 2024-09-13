@@ -1,3 +1,9 @@
+### HOW TO RUN THE PROGRAM
+While being in this folder run the command 
+```bash
+python gui.py
+```
+
 ### Rundown of the Algorithm
 
 This encryption algorithm is a **symmetric block cipher** with basic cryptographic operations. It uses a sequence of transformations (substitution, bit shifting, and XOR) applied over multiple rounds (10 rounds) to achieve security with  **confusion** and **diffusion**.

@@ -2,15 +2,7 @@
 
 This encryption algorithm is a **symmetric block cipher** with basic cryptographic operations designed for educational purposes. It uses a sequence of transformations (substitution, bit shifting, and XOR) applied over multiple rounds (10 rounds) to achieve security characteristics like **confusion** and **diffusion**. Here's a breakdown:
 
----
-
-### 1. **Symmetric Encryption**:
-   - **Symmetric** means the same key is used for both encryption and decryption.
-   - A key (up to 16 characters) is provided by the user and is used throughout the algorithm for encryption and decryption.
-
----
-
-### 2. **Steps in Each Round**:
+### **Steps in Each Round**:
    The algorithm works on blocks of text (character by character). It performs three operations in each of the 10 rounds during encryption and then reverses them during decryption.
 
 #### **Encryption**:
@@ -56,19 +48,3 @@ This encryption algorithm is a **symmetric block cipher** with basic cryptograph
 
 3. **Reverse Substitution**:
    - XOR each character with the round number, just like in the encryption phase, to get back the original character.
-
----
-
-### 3. **Rounds**:
-   - The algorithm runs the **encryption operations** for **10 rounds**, which increases its complexity and security.
-   - During **decryption**, the rounds are processed in reverse order to ensure the ciphertext is correctly transformed back into plaintext.
-
----
-
-### 4. **Key Elements**:
-
-- **Confusion**:
-   - Achieved by **substitution** and **XOR** operations, making it hard to see how the input relates to the output, especially in combination with the key.
-
-- **Diffusion**:
-   - Ensured by **bit shifting** and **transposition**, which spread the impact of a single bit across many bits in the output, so small changes in the plaintext lead to big changes in the ciphertext.

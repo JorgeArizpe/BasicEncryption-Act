@@ -34,8 +34,8 @@ This encryption algorithm is a **symmetric block cipher** with basic cryptograph
    output[i] = text[i] ^ key[i % key_len]
    ```
 4. **Another substitution**:
-- Every character in the plaintext is modified using an **XOR** operation combined with the current round number.
-- This step ensures **confusion**, making the relationship between the key and the ciphertext more complex.
+   - Every character in the plaintext is modified using an **XOR** operation combined with the current round number.
+   - This step ensures **confusion**, making the relationship between the key and the ciphertext more complex.
 
 Example:
 ```python

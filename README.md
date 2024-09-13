@@ -33,6 +33,14 @@ This encryption algorithm is a **symmetric block cipher** with basic cryptograph
    ```python
    output[i] = text[i] ^ key[i % key_len]
    ```
+4. **Another substitution**:
+- Every character in the plaintext is modified using an **XOR** operation combined with the current round number.
+- This step ensures **confusion**, making the relationship between the key and the ciphertext more complex.
+
+Example:
+```python
+c = chr(ord(c) ^ (round + 1))
+```
 
 ---
 
@@ -40,11 +48,14 @@ This encryption algorithm is a **symmetric block cipher** with basic cryptograph
    - The decryption process reverses the encryption step-by-step.
    - It starts by XOR-ing with the key, then reverses the bit shifting, and finally undoes the substitution using the same XOR operation as in encryption.
 
-1. **XOR with Key** (reversed order):
+1. **Reverse Substitution**:
+   - XOR each character with the round number, just like in the encryption phase, to get back the original character.
+     
+2. **XOR with Key** (reversed order):
    - XOR the ciphertext with the same key to reverse the XOR operation.
 
-2. **Reverse Bit Shifting**:
+3. **Reverse Bit Shifting**:
    - Shift the bits back in the opposite direction to restore the original order.
 
-3. **Reverse Substitution**:
+4. **Another Reverse Substitution**:
    - XOR each character with the round number, just like in the encryption phase, to get back the original character.

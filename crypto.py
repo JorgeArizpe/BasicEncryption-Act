@@ -19,20 +19,17 @@ class Crypto:
         plaintext = ciphertext
         for round in range(9, -1, -1):
             # Step 1: Reverse substitution
-            plaintext = ''.join([self.reverse_substitute(c, round) for c in plaintext])
+            plaintext = ''.join([self.substitute(c, round) for c in plaintext])
             # Step 2: XOR with the key
             plaintext = self.XOR_with_key(plaintext, key)
             # Step 3: Reverse bit shifting
             plaintext = self.reverse_bit_shift(plaintext, round)
             # Step 4: Reverse substitution part 2
-            plaintext = ''.join([self.reverse_substitute(c, round) for c in plaintext])
+            plaintext = ''.join([self.substitute(c, round) for c in plaintext])
         return plaintext
 
     def substitute(self, c: str, round: int) -> str:
         # Simple XOR substitution using round number
-        return chr(ord(c) ^ (round + 1))
-
-    def reverse_substitute(self, c: str, round: int) -> str:
         return chr(ord(c) ^ (round + 1))
 
     def bit_shift(self, input_text: str, round: int) -> str:
